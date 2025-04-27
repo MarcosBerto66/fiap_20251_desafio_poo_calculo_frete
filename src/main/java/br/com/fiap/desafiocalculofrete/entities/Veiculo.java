@@ -21,15 +21,16 @@ public abstract class Veiculo {
         }
     }
 
+    public double obterValorTotal(){
+        var valorTotal =
+        return 0.0;
+    }
+
     public double obterCustoCombustivel() {
         return 0.0;
     }
 
     public double obterValorTransporte(){
-        return 0.0;
-    }
-
-    public double obterValorTotal(){
         return 0.0;
     }
 

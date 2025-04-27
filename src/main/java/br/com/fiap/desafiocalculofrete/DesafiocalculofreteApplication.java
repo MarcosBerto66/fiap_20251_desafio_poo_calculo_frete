@@ -2,6 +2,7 @@ package br.com.fiap.desafiocalculofrete;
 
 import br.com.fiap.desafiocalculofrete.entities.Veiculo;
 import org.springframework.boot.SpringApplication;
+import br.com.fiap.desafiocalculofrete.factorys.VeiculoFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.ArrayList;
@@ -10,9 +11,11 @@ import java.util.List;
 @SpringBootApplication
 public class DesafiocalculofreteApplication {
 
+	private static VeiculoFactory veiculoFactory;
+
 	public static void main(String[] args) {
 
-		/*Veiculo carro = obterCarro();
+		Veiculo carro = obterCarro();
 		Veiculo caminhao = obterCaminhao();
 		Veiculo bicicleta = obterBicicleta();
 
@@ -26,7 +29,11 @@ public class DesafiocalculofreteApplication {
 			precoTotal += veiculo.obterValorTotal();
 		}
 
-		System.out.println("Preço total: " + precoTotal);*/
+		System.out.println("Preço total: " + precoTotal);
+	}
+
+	private Veiculo obterCarro(){
+		veiculoFactory.obterCarro();
 	}
 
 }

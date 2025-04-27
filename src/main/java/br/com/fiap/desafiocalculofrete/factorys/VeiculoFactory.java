@@ -3,9 +3,9 @@ package br.com.fiap.desafiocalculofrete.factorys;
 import br.com.fiap.desafiocalculofrete.entities.*;
 import br.com.fiap.desafiocalculofrete.services.TabelaTaxaVeiculo;
 
-public class VeiculoFactory {
+public abstract class VeiculoFactory {
 
-    public static Veiculo criarCarro(int passageiros, TabelaTaxaVeiculo tabela, double distancia) throws Exception {
+    public static Veiculo obterCarro(int passageiros, TabelaTaxaVeiculo tabela, double distancia) throws Exception {
         return new Carro(passageiros, tabela, distancia);
     }
 
