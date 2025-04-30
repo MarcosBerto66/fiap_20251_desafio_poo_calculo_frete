@@ -1,6 +1,8 @@
 package br.com.fiap.desafiocalculofrete;
 
 import br.com.fiap.desafiocalculofrete.entities.Veiculo;
+import br.com.fiap.desafiocalculofrete.services.TabelaTaxaVeiculo;
+import br.com.fiap.desafiocalculofrete.services.TabelaTaxaVeiculoLeve;
 import org.springframework.boot.SpringApplication;
 import br.com.fiap.desafiocalculofrete.factorys.VeiculoFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,11 +13,10 @@ import java.util.List;
 @SpringBootApplication
 public class DesafiocalculofreteApplication {
 
-	private static VeiculoFactory veiculoFactory;
-
+	private VeiculoFactory veiculoFactory = new VeiculoFactory();
 	public static void main(String[] args) {
 
-		Veiculo carro = obterCarro();
+		/*Veiculo carro = obterCarro();
 		Veiculo caminhao = obterCaminhao();
 		Veiculo bicicleta = obterBicicleta();
 
@@ -29,11 +30,12 @@ public class DesafiocalculofreteApplication {
 			precoTotal += veiculo.obterValorTotal();
 		}
 
-		System.out.println("Preço total: " + precoTotal);
+		System.out.println("Preço total: " + precoTotal);*/
 	}
 
-	private Veiculo obterCarro(){
-		veiculoFactory.obterCarro();
+	private Veiculo obterCarro() throws Exception {
+		TabelaTaxaVeiculo tabelaTaxaVeiculo = new TabelaTaxaVeiculoLeve();
+		return veiculoFactory.obterCarro(4, tabelaTaxaVeiculo, 20);
 	}
 
 }

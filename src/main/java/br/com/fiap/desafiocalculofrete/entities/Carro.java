@@ -9,9 +9,7 @@ public class Carro extends Veiculo{
     private static final int MINIMO_PASSAGEIROS = 1;
     private static final int MAXIMO_PASSAGEIROS = 4;
 
-    private TabelaTaxaVeiculo tabelaTaxaVeiculo = new TabelaTaxaVeiculoLeve();
-
-    public Carro(int quantidadePassageiros, double distancia){
+    public Carro(int quantidadePassageiros, TabelaTaxaVeiculo tabelaTaxaVeiculo, double distancia){
         super(quantidadePassageiros, tabelaTaxaVeiculo, distancia);
         validarQuantidadePassageiros(quantidadePassageiros);
     }
@@ -26,13 +24,12 @@ public class Carro extends Veiculo{
     }
     @Override
     public double obterCustoCombustivel() {
-        var custoCombustivel = this.obterValorTotal();
-        return
+        return super.getTabelaTaxa().obterPorDistanciaEmQuilometros(super.getDistancia());
     }
 
     @Override
     public double obterValorTransporte(){
-        return 0.0;
+        return super.getTabelaTaxa().obterPorPassageiro(super.getQuantidadePassageiros());
     }
 
 }

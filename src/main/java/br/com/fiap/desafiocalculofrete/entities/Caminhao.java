@@ -11,4 +11,14 @@ public class Caminhao extends Veiculo{
         super(0, new TabelaTaxaVeiculoPesado(), distancia);
         this.quantidadeQuiloDaCarga = quantidadeQuiloDaCarga;
     }
+
+    @Override
+    public double obterCustoCombustivel() {
+        return 0;
+    }
+
+    @Override
+    public double obterValorTransporte() {
+        return 0;
+    }
 }

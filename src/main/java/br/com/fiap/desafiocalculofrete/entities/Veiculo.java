@@ -1,7 +1,9 @@
 package br.com.fiap.desafiocalculofrete.entities;
 
 import br.com.fiap.desafiocalculofrete.services.TabelaTaxaVeiculo;
+import lombok.Getter;
 
+@Getter
 public abstract class Veiculo {
 
     private int quantidadePassageiros;
@@ -22,16 +24,13 @@ public abstract class Veiculo {
     }
 
     public double obterValorTotal(){
-        var valorTotal =
-        return 0.0;
+        return (obterCustoCombustivel() + obterValorTransporte()) * this.distancia;
     }
 
-    public double obterCustoCombustivel() {
-        return 0.0;
-    }
+    public abstract double obterCustoCombustivel();
 
-    public double obterValorTransporte(){
-        return 0.0;
-    }
+    public abstract double obterValorTransporte();
+
+
 
 }
