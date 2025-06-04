@@ -9,11 +9,11 @@ public class VeiculoFactory {
         return new Carro(passageiros, tabela, distancia);
     }
 
-   /*public static Veiculo criarCaminhao(int quantidadeQuiloDaCarga, TabelaTaxaVeiculo tabelaTaxa, double distancia) {
+   public static Veiculo obterCaminhao(int quantidadeQuiloDaCarga, TabelaTaxaVeiculo tabelaTaxa, double distancia) throws Exception {
         return new Caminhao(quantidadeQuiloDaCarga, tabelaTaxa, distancia);
     }
 
-    public static Veiculo criarBicicleta(int passageiros, TabelaTaxaVeiculo tabela, double distancia) {
+    /*public static Veiculo obterBicicleta(int passageiros, TabelaTaxaVeiculo tabela, double distancia) {
         return new Bicicleta(passageiros, tabela, distancia);
     }*/
 }

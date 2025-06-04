@@ -24,12 +24,12 @@ public class Carro extends Veiculo{
     }
     @Override
     public double obterCustoCombustivel() {
-        return super.getTabelaTaxa().obterPorDistanciaEmQuilometros(super.getDistancia());
+        return this.getTabelaTaxa().obterPorDistanciaEmQuilometros(this.getDistancia());
     }
 
     @Override
     public double obterValorTransporte(){
-        return super.getTabelaTaxa().obterPorPassageiro(super.getQuantidadePassageiros());
+        return this.getTabelaTaxa().obterPorPassageiro(this.getQuantidadePassageiros());
     }
 
 }

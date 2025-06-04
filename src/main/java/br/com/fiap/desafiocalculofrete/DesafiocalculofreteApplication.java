@@ -13,11 +13,11 @@ import java.util.List;
 @SpringBootApplication
 public class DesafiocalculofreteApplication {
 
-	private VeiculoFactory veiculoFactory = new VeiculoFactory();
-	public static void main(String[] args) {
+	private static VeiculoFactory veiculoFactory = new VeiculoFactory();
+	public static void main(String[] args) throws Exception {
 
-		/*Veiculo carro = obterCarro();
-		Veiculo caminhao = obterCaminhao();
+		Veiculo carro = obterCarro();
+		/*Veiculo caminhao = obterCaminhao();
 		Veiculo bicicleta = obterBicicleta();
 
 		List<Veiculo> veiculos = new ArrayList<>();
@@ -33,9 +33,14 @@ public class DesafiocalculofreteApplication {
 		System.out.println("Preço total: " + precoTotal);*/
 	}
 
-	private Veiculo obterCarro() throws Exception {
+	private static Veiculo obterCarro() throws Exception {
 		TabelaTaxaVeiculo tabelaTaxaVeiculo = new TabelaTaxaVeiculoLeve();
 		return veiculoFactory.obterCarro(4, tabelaTaxaVeiculo, 20);
+	}
+
+	private Veiculo obterCaminhao() throws Exception {
+		TabelaTaxaVeiculo tabelaTaxaVeiculo = new TabelaTaxaVeiculoLeve();
+		return veiculoFactory.obterCaminhao(4, tabelaTaxaVeiculo, 20);
 	}
 
 }
