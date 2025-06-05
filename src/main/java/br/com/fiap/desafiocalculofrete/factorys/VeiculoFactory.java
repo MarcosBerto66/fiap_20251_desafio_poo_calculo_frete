@@ -13,7 +13,7 @@ public class VeiculoFactory {
         return new Caminhao(quantidadeQuiloDaCarga, tabelaTaxa, distancia);
     }
 
-    /*public static Veiculo obterBicicleta(int passageiros, TabelaTaxaVeiculo tabela, double distancia) {
-        return new Bicicleta(passageiros, tabela, distancia);
-    }*/
+    public static Veiculo obterBicicleta(int passageiros, TabelaTaxaVeiculo tabelaTaxa, double distancia) {
+        return new Bicicleta(passageiros, tabelaTaxa, distancia);
+    }
 }
